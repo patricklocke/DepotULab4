@@ -1,8 +1,6 @@
 
 var btn = document.createElement('button');
-// var container = document.createElement('div');
-// container.id ='bucket'
-
+// Create a button labeled "Moar Boxes" on page load
 document.addEventListener('DOMContentLoaded', function () {
     btn.style.color = 'white';
     btn.style.backgroundColor = 'black';
