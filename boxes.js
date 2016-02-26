@@ -1,17 +1,24 @@
 
 var btn = document.createElement('button');
+// var container = document.createElement('div');
+// container.id ='bucket'
 
 document.addEventListener('DOMContentLoaded', function () {
     btn.style.color = 'white';
     btn.style.backgroundColor = 'black';
     btn.style.marginBottom = "15px";
     btn.style.position = 'fixed';
+    btn.id = "button";
     var text = document.createTextNode("Moar Boxes");
     btn.appendChild(text);
     document.body.appendChild(btn);
+    var container = document.createElement('div');
+    container.id ='bucket'
+    document.body.appendChild(container);
 });
 //Create boxes on click
 btn.onclick = function boxes() {
+    
     var markers = document.getElementsByClassName('mark');
     var newBox = document.createElement('div');
     newBox.style.height = "150px";
@@ -22,8 +29,8 @@ btn.onclick = function boxes() {
     newBox.style.marginRight = "5px";
     newBox.style.marginTop = '35px';
     newBox.className = 'mark';
-    newBox.id =String(markers.length);
-    document.body.appendChild(newBox);
+    newBox.id = String(markers.length);
+    document.getElementById('bucket').appendChild(newBox);
 // change box on mouseover to reveal ID number
     newBox.onmouseover = function reveal() {
         var para = document.createElement('p');
@@ -45,7 +52,7 @@ btn.onclick = function boxes() {
 // currently broken for even numbers
     newBox.ondblclick = function remove() {
         var choice = parseInt(newBox.id);
-        if (choice % 2 === 1) {
+        if (choice % 2 == 1) {
             var removeBox = choice
             var reBox = removeBox.toString();
             var child = document.getElementById(reBox).previousElementSibling;
