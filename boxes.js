@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.appendChild(text);
     document.body.appendChild(btn);
     var container = document.createElement('div');
-    container.id ='bucket'
+    container.id = 'bucket'
     document.body.appendChild(container);
 });
 //Create boxes on click
 btn.onclick = function boxes() {
-    
     var markers = document.getElementsByClassName('mark');
     var newBox = document.createElement('div');
     newBox.style.height = "150px";
@@ -46,8 +45,7 @@ btn.onclick = function boxes() {
         var colorArray = ['red', 'blue', 'green', 'orange', 'yellow', 'purple', 'pink', 'gray', 'lime'];
         newBox.style.backgroundColor = colorArray[Math.floor((Math.random() * colorArray.length))];
     }
-// supposed to remove box to left if odd, right if even (could be backwards)
-// currently broken for even numbers
+// on Double click, remove previous element if  Odd, remove next element if even
     newBox.ondblclick = function remove() {
         var choice = parseInt(newBox.id);
         if (choice % 2 == 1) {
@@ -61,8 +59,9 @@ btn.onclick = function boxes() {
             var reEven = removeEven.toString();
             var evenchild = document.getElementById(reEven).nextElementSibling;
             evenchild.parentNode.removeChild(evenchild);
-        }    
+        }
     }
+// if on double click the element selected to be removed does not exists, show error message
     window.onerror = function () {
         alert("You can't do that!");
     }
