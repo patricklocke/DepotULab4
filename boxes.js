@@ -52,13 +52,14 @@ btn.onclick = function boxes() {
             child.parentNode.removeChild(child);
         }
         else {
-            
             var removeEven = choice
             var reEven = removeEven.toString();
             var evenchild = document.getElementById(reEven).nextElementSibling;
             evenchild.parentNode.removeChild(evenchild);
-        }
-        
+        }    
     }
-  
-}   
+    window.onerror = function () {
+        alert("You can't do that!");
+    }
+}
+   
