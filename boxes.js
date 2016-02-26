@@ -30,15 +30,7 @@ btn.onclick = function boxes() {
     document.getElementById('bucket').appendChild(newBox);
 // change box on mouseover to reveal ID number
     newBox.onmouseover = function reveal() {
-        var para = document.createElement('p');
-        var text = document.createTextNode(newBox.id);
-        para.style.color = 'white';
-        para.style.textAlign = 'center';
-        para.style.fontSize = '25px';
-        para.style.paddingBottom = '100px';
-        para.style.paddingTop = "40px";
-        para.appendChild(text);
-        newBox.appendChild(para);
+        newBox.innerText = newBox.id;
     }
 // change box color on single click
     newBox.onclick = function color() {
