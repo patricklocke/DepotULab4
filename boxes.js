@@ -52,14 +52,16 @@ newBox.onclick = function color() {
 newBox.ondblclick = function remove () {
     var choice = parseInt(newBox.id);
     if (choice % 2 === 1) {
-        var removeBOx = (newBox.id - 1)
-        var child = document.getElementById(removeBOx);
+        var removeBox = (choice- 1)
+        var reBox = removeBox.toString();
+        var child = document.getElementById(reBox);
         child.parentNode.removeChild(child);
     } 
     else {
-        var removeBox = (newBox.id + 1)
-        var child = document.getElementById(removeBox);
-        child.parentNode.removeChild(child);
+        var removeEven = (choice - 1)
+        var reEven = removeEven.toString();
+        var evenchild = document.getElementById(reEven);
+        evenchild.parentNode.removeChild(child);
     }
     
     
