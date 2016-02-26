@@ -22,7 +22,7 @@ btn.onclick = function boxes() {
     newBox.style.marginRight = "5px";
     newBox.style.marginTop = '35px';
     newBox.className = 'mark';
-    newBox.id = markers.length;
+    newBox.id =String(markers.length);
     document.body.appendChild(newBox);
 // change box on mouseover to reveal ID number
     newBox.onmouseover = function reveal() {
@@ -46,16 +46,16 @@ btn.onclick = function boxes() {
     newBox.ondblclick = function remove() {
         var choice = parseInt(newBox.id);
         if (choice % 2 === 1) {
-            var removeBox = (choice - 1)
+            var removeBox = choice
             var reBox = removeBox.toString();
-            var child = document.getElementById(reBox);
+            var child = document.getElementById(reBox).previousElementSibling;
             child.parentNode.removeChild(child);
         }
         else {
             
-            var removeEven = (choice + 1)
+            var removeEven = choice
             var reEven = removeEven.toString();
-            var evenchild = document.getElementById(reEven);
+            var evenchild = document.getElementById(reEven).nextElementSibling;
             evenchild.parentNode.removeChild(evenchild);
         }
         
