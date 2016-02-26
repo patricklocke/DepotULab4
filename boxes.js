@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
 btn.onclick = function boxes() {
     var markers = document.getElementsByClassName('mark');
     var newBox = document.createElement('div');
-    newBox.style.height = "75px";
-    newBox.style.width = "75px";
+    newBox.style.height = "150px";
+    newBox.style.width = "150px";
     newBox.style.backgroundColor = "black";
     newBox.style.padding = "15px 15px";
     newBox.style.cssFloat = "left";
@@ -30,8 +30,9 @@ btn.onclick = function boxes() {
         var text = document.createTextNode(newBox.id);
         para.style.color = 'white';
         para.style.textAlign = 'center';
-        para.style.fontSize = '20px';
-        para.style.paddingBottom = '25px';
+        para.style.fontSize = '25px';
+        para.style.paddingBottom = '100px';
+        para.style.paddingTop = "40px";
         para.appendChild(text);
         newBox.appendChild(para);
     }
@@ -50,9 +51,9 @@ btn.onclick = function boxes() {
             var child = document.getElementById(reBox);
             child.parentNode.removeChild(child);
         }
-        else if {
+        else {
             
-            var removeEven = (choice - 1)
+            var removeEven = (choice + 1)
             var reEven = removeEven.toString();
             var evenchild = document.getElementById(reEven);
             evenchild.parentNode.removeChild(evenchild);
